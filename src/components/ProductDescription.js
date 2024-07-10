@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { newArrivals, categories } from './ProductList';
+import { useCart } from './CartContext';
 import './ProductDescription.css';
 
 const ProductDescription = () => {
@@ -8,9 +9,20 @@ const ProductDescription = () => {
   const allProducts = [...newArrivals, ...categories.female, ...categories.male, ...categories.kids];
   const product = allProducts.find(item => item.id === parseInt(id));
 
+  const { dispatch } = useCart();
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
+
   if (!product) {
     return <div>No product found</div>;
   }
+
+  const addToCart = () => {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: { ...product, selectedSize, selectedColor, quantity: 1 },
+    });
+  };
 
   return (
     <div className="product-description-page">
@@ -30,16 +42,30 @@ const ProductDescription = () => {
           </div>
           <div className="options">
             <h3>Size:</h3>
-            <p>S M L XL</p>
+            <div>
+              {['S', 'M', 'L', 'XL'].map(size => (
+                <button
+                  key={size}
+                  className={`size-option ${selectedSize === size ? 'selected' : ''}`}
+                  onClick={() => setSelectedSize(size)}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
             <h3>Colors Available:</h3>
             <div className="colors">
-              <div className="color" style={{ backgroundColor: 'grey' }}></div>
-              <div className="color" style={{ backgroundColor: 'blue' }}></div>
-              <div className="color" style={{ backgroundColor: 'red' }}></div>
-              <div className="color" style={{ backgroundColor: 'black' }}></div>
+              {['grey', 'blue', 'red', 'black'].map(color => (
+                <div
+                  key={color}
+                  className={`color ${selectedColor === color ? 'selected' : ''}`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => setSelectedColor(color)}
+                ></div>
+              ))}
             </div>
           </div>
-          <button>Add to Cart</button>
+          <button btn btn-primary onClick={addToCart}>Add to Cart</button>
         </div>
       </div>
     </div>

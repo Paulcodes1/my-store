@@ -14,8 +14,8 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-            <img src={vector} alt="Unique Store" />
-            <span>Unique Store</span>
+          <img src={vector} alt="Unique Store" />
+          <span>Unique Store</span>
         </div>
         <div className="navigation-toggle" onClick={toggleNavigation}>
           &#9776; {/* Hamburger icon */}
@@ -29,7 +29,6 @@ const Header = () => {
             <li><button className="sign-in">Sign In</button></li>
           </ul>
         </div>
-        {/* <button className="sign-in">Sign In</button> */}
       </div>
     </header>
   );

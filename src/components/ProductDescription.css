@@ -1,24 +1,22 @@
 .product-description-page {
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .product-description {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .product-image img {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 8px;
 }
 
 .product-details {
-  max-width: 400px;
+  flex: 1;
 }
 
 .product-details h2 {
@@ -26,7 +24,7 @@
   margin-bottom: 10px;
 }
 
-.product-details p {
+.product-price {
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -62,13 +60,14 @@
   height: 20px;
   border-radius: 50%;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #27489e;
+  color: #f8f8f8;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
 }

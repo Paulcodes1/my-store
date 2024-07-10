@@ -1,0 +1,50 @@
+.cart-page {
+    padding: 20px;
+  }
+  
+  .cart-summary {
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .text-center {
+    color: #27489e;
+  }
+  
+  .checkout-button {
+    display: block;
+    margin: 0 auto; /* Center the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .checkout-button:hover {
+    background-color: #0056b3;
+  }
+
+  .color-box {
+    display: inline-block;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    border: 1px solid #000; /* Optional: Add a border for better visibility */
+    border-radius: 50%; /* Makes the color box a circle */
+    margin-left: 5px; /* Space between "Color:" text and the color box */
+    vertical-align: middle; /* Align with the text */
+  }
+
+  .delete-icon {
+    cursor: pointer;
+    width: 18px;
+    height: 24px;
+    transition: transform 0.2s;
+  }
+  
+  .delete-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  }  
+  

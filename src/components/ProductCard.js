@@ -9,7 +9,7 @@ const ProductCard = ({ id, image, title, price, rating }) => {
         <img src={image} className="card-img-top" alt={title} />
         <div className="card-body text-center">
           <h5 className="card-title">{title}</h5>
-          <p className="card-price">{price}</p>
+          <p className="card-price">${price}</p>
           <div className="rating">
             {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
           </div>
